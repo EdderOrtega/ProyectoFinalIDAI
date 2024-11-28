@@ -10,59 +10,72 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 main {
-  background-color: var(--otroFondo);
+  background-color: var(--fondo);
 }
-.icono {
-  margin-right: 300px;
-}
-.icono img {
-  padding: 5px;
-  width: 100px;
-  margin: 0;
-  border-radius: 50%;
-}
-nav {
-  display: flex;
-  background-color: var(--otroFondo);
-  height: 100px;
-  justify-content: space-evenly;
-  align-items: center;
+#menuBar {
+  background-color: #333;
   position: fixed;
-  z-index: 33;
+  z-index: 444;
   width: 100%;
 }
-nav ol {
+
+nav {
   display: flex;
-  justify-content: end;
-  margin-right: 50px;
-  margin: 0px;
-  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 }
-li {
-  margin-top: 10px;
-  list-style-type: none;
-  font-weight: bold;
-  font-size: 30px;
-  margin-right: 20px;
-  border-radius: 30px;
-  width: 230px;
-  text-align: center;
+nav li a {
+  margin-left: 100px;
 }
-li a {
-  text-decoration: none;
-  color: var(--letrasPrincipal);
-  border-bottom: 4px var(--otroFondo) solid;
-}
-li:hover {
-  background-color: var(--fondo);
-  a {
-    color: var(--letrasPrincipalS);
-  }
+.icono img {
+  border-radius: 50%;
+  margin-right: 500px;
 }
 
+#btnMenuOpen,
+#btnMenuClose {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.icono img {
+  width: 50px;
+  height: auto;
+}
+
+#enlaces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#enlaces ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#enlaces a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+}
+
+#enlaces a:hover {
+  color: var(--rosa);
+}
 #inicio {
   position: relative;
   width: 100%;
@@ -105,7 +118,6 @@ li:hover {
 
 /* Video como fondo, con reproducción automática y silenciada */
 #inicio video {
-  margin-top: 200px;
   position: absolute;
   width: 100%;
   height: 80vh;
@@ -134,7 +146,7 @@ li:hover {
   border-radius: 50%;
   margin-left: 30px;
   align-items: center;
-  background-color: aliceblue;
+  background-color: var(--rosa);
 }
 .whatsIcon i {
   font-size: 35px;
@@ -143,9 +155,8 @@ li:hover {
   justify-self: center;
   width: 300px;
   height: 60px;
-  background: var(--morado);
+  background: var(--rosa);
   font-size: 20px;
-
   color: var(--fondo);
   border-radius: 50px;
   display: flex;
@@ -155,8 +166,10 @@ li:hover {
 }
 #btnWhatsapp a {
   align-items: center;
-  color: var(--fondo);
+  color: var(--letrasPrincipal);
   font-style: italic;
+  font-size: larger;
+  font-weight: bolder;
   display: flex;
   margin: 0;
   cursor: pointer;
@@ -213,6 +226,9 @@ li:hover {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  border-radius: 50px;
+  background: #fbe9e9;
+  box-shadow: 20px 20px 30px #fadfdf, -20px -20px 30px #e3c5c5;
 }
 
 .servicioCard:hover {
@@ -310,27 +326,6 @@ li:hover {
   background-color: var(--letrasPrincipal);
 }
 
-/* Botones de navegación */
-.btnSlider {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 105, 247, 0.5);
-  color: #f5f5f9;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
 /* Mostrar el primer slide */
 .slide:first-child {
   display: block;
@@ -341,7 +336,7 @@ li:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   background-color: #222;
-  color: #fff;
+  color: var(--fondo);
   padding: 20px;
   text-align: center;
 }
@@ -349,14 +344,22 @@ li:hover {
 .footerColumna h3 {
   margin-bottom: 10px;
   font-size: 18px;
-  color: var(--fondo);
+  color: var(--otroFondo);
 }
 
 .footerColumna p {
   margin: 5px 0;
-  color: var(--letrasPrincipal);
+  color: var(--otroFondo);
 }
-
+.contactoInfo {
+  justify-content: center;
+  text-align: center;
+  color: var(--letrasPrincipal);
+  font-weight: bold;
+  font-size: large;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
 .social-icons {
   display: flex;
   justify-content: center;
@@ -386,8 +389,209 @@ li:hover {
   justify-items: baseline;
 }
 
-@media (max-width: 768px) {
-  .servicios {
+@media (max-width: 700px) {
+  #servicios {
     grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .containerServicios {
+    margin-top: 50px;
+  }
+  .titulo {
+    font-size: 70px;
+    margin-top: -80px;
+  }
+  .subtitulo {
+    font-size: 30px;
+  }
+
+  #menuBar {
+    position: fixed;
+    z-index: 4400;
+    width: 100%;
+  }
+
+  #enlaces li a {
+    font-size: 5em;
+    margin: 0px;
+    font-weight: 700;
+    font-style: italic;
+  }
+  #enlaces {
+    justify-content: start;
+  }
+
+  .icono img {
+    width: 100px;
+    border-radius: 50%;
+  }
+  #menuContent {
+    display: none; /* Oculta el menú por defecto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    right: 0;
+    background-color: #333;
+    z-index: 1000;
+    height: 100vh;
+    padding-top: 60px;
+    text-align: start;
+  }
+
+  #menuContent.open {
+    display: block; /* Muestra el menú cuando se abre */
+  }
+
+  #enlaces ol {
+    display: block;
+  }
+
+  #enlaces li {
+    margin: 20px 0;
+  }
+
+  #btnMenuOpen {
+    display: block;
+  }
+
+  #btnMenuClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+  }
+  #btnWhatsapp {
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    color: var(--fondo);
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  #btnWhatsapp a {
+    align-items: center;
+    font-style: italic;
+    display: flex;
+    text-decoration: none;
+  }
+  .eslogan {
+    font-size: 3em;
+  }
+  .subtitulo {
+    font-size: 1.5em;
+  }
+
+  ol li a {
+    font-size: 2.5em;
+  }
+  .carru {
+    display: grid;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+  }
+  .slider {
+    width: 100%;
+  }
+  .slideImagen {
+    width: 100%;
+    height: 400px;
+  }
+  .footerColumna {
+    display: grid;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  .contactoInfo h3 {
+    text-align: center;
+  }
+  .contactoInfo p {
+    text-align: start;
+  }
+  nav {
+    justify-content: start;
+  }
+}
+
+@media (min-width: 701px) {
+  #btnMenuOpen {
+    display: none;
+  }
+  #btnMenuClose {
+    display: none;
+  }
+  .titulo {
+    font-size: 6em;
+  }
+  .eslogan {
+    font-size: 5em;
+  }
+  .subtitulo {
+    font-size: 2em;
+  }
+  #servicios {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px;
+  }
+  .servicioImagen {
+    width: 100%;
+  }
+  .servicioCard {
+    width: 100%;
+  }
+  .containerServicios {
+    margin-top: 100px;
+  }
+  ol {
+    display: flex;
+    gap: 2em;
+  }
+
+  ol li a {
+    font-size: 1em;
+    margin-left: auto;
+  }
+
+  .icono img {
+    margin-right: 200px;
+  }
+
+  .slideImagen {
+    height: 400px;
+    width: 100%;
+  }
+  .slider {
+    width: 100%;
+    height: 600px;
+  }
+  .carru {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 700px;
+  }
+  .contactoInfo h3 {
+    text-align: center;
+  }
+  .contactoInfo p {
+    text-align: start;
+  }
+}
+@media (min-width: 1000px) {
+  #servicios {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .servicioCard {
+    width: 80%;
+    margin: 3em;
+  }
+  #enlaces ol li {
+    margin-left: 50px;
+  }
+  .icono img {
+    justify-self: flex-start;
   }
 }

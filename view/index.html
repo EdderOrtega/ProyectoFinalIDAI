@@ -10,17 +10,26 @@
   <title>Maricruz Flores Beauty Nails</title>
 </head>
   <body>
-    <nav> 
-      <div class="icono">
-        <img src="../img/MariCruzflores2.png" alt="logo">
-      </div>
-      <ol>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#acerca">Sobre Nosotros</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-      </ol>
-    </nav>
+    <section id="menuBar">
+      <nav>
+        <i class="fas fa-bars" id="btnMenuOpen"></i>
+        <div class="menu-content" id="menuContent">
+            <div class="icono">
+              <img src="../img/MariCruzflores2.png" alt="logo">
+            </div>
+          <div id="enlaces">
+            <ol >
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#acerca">Conócenos</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ol>
+          </div>
+          <i class="fas fa-times" id="btnMenuClose"></i>
+        </div>
+      </nav>
+    </section>
+
     <main>
     <section id="inicio">
       <video autoplay loop muted playsinline>
@@ -110,28 +119,23 @@
       </div>
     </section>
 
-      <section class="carru">
+      <section id="acerca" class="carru">
         <div class="slider">
           <div class="slide">
-            <h2>Imagen 1</h2>
-            <p>Descripción de la imagen 1</p>
+            <h2>Nuestras instalaciones</h2>
             <img src="../img/local.jpeg" alt="local" class="slideImagen">
           </div>
           <div class="slide">
-            <h2>Imagen 2</h2>
-            <p>Descripción de la imagen 2</p>
+            <h2>Productos</h2>
             <img src="../img/productos.jpeg" alt="productos-local" class="slideImagen">
           </div>
           <div class="slide">
-            <h2>Imagen 3</h2>
-            <p>Descripción de la imagen 3</p>
-            <img src="../img/local.jpeg" alt="third-image" class="slideImagen">
+            <h2>Trabajo de profesionales</h2>
+            <img src="../img/poniendoUñas.JPG" alt="third-image" class="slideImagen">
           </div>
-          <!-- <button class="prev btnSlider" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="next btnSlider" onclick="moveSlide(1)">&#10095;</button> -->
         </div>
         
-      <div class="footerColumna">
+      <div class="contactoInfo">
         <h3>Contacto</h3>
         <p>Dirección:Anillo Periferico 419 local 3, Rincón de las caina</p>
         <p>Teléfono: +52 123 456 7890</p>
@@ -143,7 +147,7 @@
 
     <footer id="contacto">
       <div class="footerColumna">
-        <h3>Síguenos en nuestras redes</h3>
+        <h3>Síguenos en nuestras redes sociales</h3>
         <div class="social-icons">
           <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
           <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -157,14 +161,8 @@
 
       <div class="footerColumna">
         <h3>Encuéntranos</h3>
-        <div class="mapaContainer">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345092334!2d-122.4210842846816!3d37.77492977975885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c2eebac17%3A0x1420e3c7b2c8bd41!2sGoogle!5e0!3m2!1sen!2smx!4v1698177105875!5m2!1sen!2smx" 
-            width="100%" 
-            height="150" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy"></iframe>
+        <div class="mapaContainer">        
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.4660567981286!2d-100.375392116643!3d25.680152119139223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866296185eac1b49%3A0x86634427e22ab8a9!2sAv.%20Anillo%20Periferico%20414%2C%20Rinc%C3%B3n%20de%20Las%20Colinas%2C%2064630%20Monterrey%2C%20N.L.!5e1!3m2!1ses-419!2smx!4v1732727394696!5m2!1ses-419!2smx" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </footer>
