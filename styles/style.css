@@ -1,0 +1,597 @@
+:root {
+  --rosa: #fac5ca;
+  --morado: #c691f7;
+  --fondo: #ffe7fd;
+  --otroFondo: #f5f5f9;
+  --letrasPrincipal: #333;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+main {
+  background-color: var(--fondo);
+}
+#menuBar {
+  background-color: #333;
+  position: fixed;
+  z-index: 444;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+nav li a {
+  margin-left: 100px;
+}
+.icono img {
+  border-radius: 50%;
+  margin-right: 500px;
+}
+
+#btnMenuOpen,
+#btnMenuClose {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.icono img {
+  width: 50px;
+  height: auto;
+}
+
+#enlaces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#enlaces ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#enlaces a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+}
+
+#enlaces a:hover {
+  color: var(--rosa);
+}
+#inicio {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1;
+}
+.titulo {
+  font-weight: 400;
+  font-size: 120px;
+  font-style: italic;
+  color: var(--rosa);
+  animation: text-appear 1s ease-in both;
+}
+.eslogan {
+  font-variant: var(--textoEslogan);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 80px;
+  color: var(--fondo);
+  animation: text-appear 1s ease-in both;
+}
+
+/* Definición de la animación */
+@keyframes text-appear {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* Video como fondo, con reproducción automática y silenciada */
+#inicio video {
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5;
+  filter: brightness(30%);
+  animation: text-appear 0.7s ease-in both;
+}
+
+/* Contenido de la sección hero */
+.hero-content {
+  z-index: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+.subtitulo {
+  font-size: 30px;
+}
+.whatsIcon {
+  color: #01bc39;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  border-radius: 50%;
+  margin-left: 30px;
+  align-items: center;
+  background-color: var(--rosa);
+}
+.whatsIcon i {
+  font-size: 35px;
+}
+#btnWhatsapp {
+  justify-self: center;
+  width: 300px;
+  height: 60px;
+  background: var(--rosa);
+  font-size: 20px;
+  color: var(--fondo);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid aliceblue;
+}
+#btnWhatsapp a {
+  align-items: center;
+  color: var(--letrasPrincipal);
+  font-style: italic;
+  font-size: larger;
+  font-weight: bolder;
+  display: flex;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+.heroInfo {
+  display: grid;
+  animation: text-appear 1s ease-in both;
+}
+.containerServicios {
+  background-color: var(--fondo);
+  margin: 300px 0px 100px 0px;
+}
+.serviciosTitulo {
+  text-align: center;
+  font-size: 50px;
+  background-color: var(--fondo);
+}
+/* Contenedor principal */
+#servicios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0px 100px 0px 100px;
+  background-color: var(--fondo);
+}
+/* Título visible sobre la imagen antes del hover */
+.servicioTitulo {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(227, 201, 201, 0.6);
+  color: #f5f5f9;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 40px;
+  font-weight: bold;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.servicioCard:hover .servicioTitulo {
+  opacity: 0;
+}
+/* Estilo de cada card */
+.servicioCard {
+  width: 400px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-radius: 50px;
+  background: #fbe9e9;
+  box-shadow: 20px 20px 30px #fadfdf, -20px -20px 30px #e3c5c5;
+}
+
+.servicioCard:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen */
+.servicioImagen img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.servicioCard:hover .servicioImagen img {
+  opacity: 0.3;
+}
+
+/* Información oculta inicialmente */
+.servicioInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Mostrar descripción al pasar el ratón */
+.servicioCard:hover .servicioInfo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.servicioInfo h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.servicioInfo p {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+.carru {
+  width: 80%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+/* Slider container */
+.slider {
+  background-color: var(--otroFondo);
+  width: 50%;
+  height: 500px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo de cada slide */
+.slide {
+  display: none;
+  text-align: center;
+  height: 500px;
+  position: absolute;
+  width: 100%;
+}
+.slide h2 {
+  color: var(--letrasPrincipal);
+  font-size: xx-large;
+  font-style: italic;
+}
+.slide p {
+  font-size: x-large;
+  color: var(--letrasPrincipal);
+  font-family: serif;
+}
+/* Estilo de las imágenes */
+.slideImagen {
+  width: 80%;
+  height: 500px;
+  object-fit: contain;
+  background-color: var(--letrasPrincipal);
+}
+
+/* Mostrar el primer slide */
+.slide:first-child {
+  display: block;
+}
+
+#contacto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background-color: #222;
+  color: var(--fondo);
+  padding: 20px;
+  text-align: center;
+}
+
+.footerColumna h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: var(--otroFondo);
+}
+
+.footerColumna p {
+  margin: 5px 0;
+  color: var(--otroFondo);
+}
+.contactoInfo {
+  justify-content: center;
+  text-align: center;
+  color: var(--letrasPrincipal);
+  font-weight: bold;
+  font-size: large;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--rosa);
+}
+
+.mapaContainer {
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #444;
+  border-radius: 5px;
+}
+.derechos {
+  margin-top: 80px;
+  display: grid;
+  justify-items: baseline;
+}
+
+@media (max-width: 700px) {
+  #servicios {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .containerServicios {
+    margin-top: 50px;
+  }
+  .titulo {
+    font-size: 70px;
+    margin-top: -80px;
+  }
+  .subtitulo {
+    font-size: 30px;
+  }
+
+  #menuBar {
+    position: fixed;
+    z-index: 4400;
+    width: 100%;
+  }
+
+  #enlaces li a {
+    font-size: 5em;
+    margin: 0px;
+    font-weight: 700;
+    font-style: italic;
+  }
+  #enlaces {
+    justify-content: start;
+  }
+
+  .icono img {
+    width: 100px;
+    border-radius: 50%;
+  }
+  #menuContent {
+    display: none; /* Oculta el menú por defecto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    right: 0;
+    background-color: #333;
+    z-index: 1000;
+    height: 100vh;
+    padding-top: 60px;
+    text-align: start;
+  }
+
+  #menuContent.open {
+    display: block; /* Muestra el menú cuando se abre */
+  }
+
+  #enlaces ol {
+    display: block;
+  }
+
+  #enlaces li {
+    margin: 20px 0;
+  }
+
+  #btnMenuOpen {
+    display: block;
+  }
+
+  #btnMenuClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+  }
+  #btnWhatsapp {
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    color: var(--fondo);
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  #btnWhatsapp a {
+    align-items: center;
+    font-style: italic;
+    display: flex;
+    text-decoration: none;
+  }
+  .eslogan {
+    font-size: 3em;
+  }
+  .subtitulo {
+    font-size: 1.5em;
+  }
+
+  ol li a {
+    font-size: 2.5em;
+  }
+  .carru {
+    display: grid;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+  }
+  .slider {
+    width: 100%;
+  }
+  .slideImagen {
+    width: 100%;
+    height: 400px;
+  }
+  .footerColumna {
+    display: grid;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  .contactoInfo h3 {
+    text-align: center;
+  }
+  .contactoInfo p {
+    text-align: start;
+  }
+  nav {
+    justify-content: start;
+  }
+}
+
+@media (min-width: 701px) {
+  #btnMenuOpen {
+    display: none;
+  }
+  #btnMenuClose {
+    display: none;
+  }
+  .titulo {
+    font-size: 6em;
+  }
+  .eslogan {
+    font-size: 5em;
+  }
+  .subtitulo {
+    font-size: 2em;
+  }
+  #servicios {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px;
+  }
+  .servicioImagen {
+    width: 100%;
+  }
+  .servicioCard {
+    width: 100%;
+  }
+  .containerServicios {
+    margin-top: 100px;
+  }
+  ol {
+    display: flex;
+    gap: 2em;
+  }
+
+  ol li a {
+    font-size: 1em;
+    margin-left: auto;
+  }
+
+  .icono img {
+    margin-right: 200px;
+  }
+
+  .slideImagen {
+    height: 400px;
+    width: 100%;
+  }
+  .slider {
+    width: 100%;
+    height: 600px;
+  }
+  .carru {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 700px;
+  }
+  .contactoInfo h3 {
+    text-align: center;
+  }
+  .contactoInfo p {
+    text-align: start;
+  }
+}
+@media (min-width: 1000px) {
+  #servicios {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .servicioCard {
+    width: 80%;
+    margin: 3em;
+  }
+  #enlaces ol li {
+    margin-left: 50px;
+  }
+  .icono img {
+    justify-self: flex-start;
+  }
+}
